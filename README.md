@@ -6,7 +6,7 @@ This project is based on the topic-aware convolutional sequence to sequence mode
 ## Experiments on topic modeling
 In this section, we use [prodLDA](https://github.com/dallascard/scholar) and [contextualized topic model](https://github.com/MilaNLProc/contextualized-topic-models) to train topic models and get topic representations of words and documents. Note that for the prodLDA we use the implementation of [scholar](https://arxiv.org/abs/1705.09296), which is a topic model based on metadata. But according to the auther, scholar is the same as prodLDA when there is no metadata. So we train a scholar with no metadata, which is equivalent to training a prodLDA.  
 
-In the original implementation of topic-aware CNN model, according to the readme file, they process data into files which are saved to directory named "data-topic-convs2s", and the files are:
+In the original implementation of topic-aware CNN model, according to the README file, they process data into files which are saved to directory named "data-topic-convs2s", and the files are:
 ```
 train.document, train.summary, train.document-lemma and train.doc-topics
 validation.document, validation.summary, validation.document-lemma and validation.doc-topics
@@ -31,4 +31,4 @@ Then, you should make several changes to the original implementation (i.e. use s
 * use "fconv.py" to replace the corresponding one in directory "XSum-Topic-ConvS2S/fairseq/models/"
 * put "vectordict.py" in directory "XSum/XSum-Topic-ConvS2S/fairseq/"
 
-The remaining steps are the same as the steps in the original implementation.
+The remaining steps are the same as the steps in the original implementation. Note that in "train.py" you should choose which word embeddings you are going to use (GloVe or word2vec), and comment out another one. Then do the same for "generate.py".
