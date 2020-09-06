@@ -19,4 +19,5 @@ In this section, we modify a python script file in the original implementation. 
 
 In "fconv.py", there is a class named AttentionLayer. You can find several implementations for this class from line 181 to 451. You may choose one type of attention mechanism and comment out the others. You should use this script file to replace the one in the original implementation (i.e. in the directory XSum-Topic-ConvS2S/fairseq/models/). 
 
-
+## Experiments on word embeddings
+In this section, we modify some python script files in the original implementation. 
