@@ -17,7 +17,18 @@ Here we give those processed files for prodLDA ([here](https://drive.google.com/
 ## Experiments on attention mechanism 
 In this section, we modify a python script file in the original implementation. The file is named "fconv.py", and you can find it in the directory "attention" in this repository. 
 
-In "fconv.py", there is a class named AttentionLayer. You can find several implementations for this class from line 181 to 451. You may choose one type of attention mechanism and comment out the others. You should use this script file to replace the one in the original implementation (i.e. in the directory XSum-Topic-ConvS2S/fairseq/models/). 
+In "fconv.py", there is a class named AttentionLayer. You can find several implementations for this class from line 181 to 451. You may choose one type of attention mechanism and comment out the others. You should use this script file to replace the one in the original implementation (i.e. in the directory "XSum-Topic-ConvS2S/fairseq/models/"). 
 
 ## Experiments on word embeddings
-In this section, we modify some python script files in the original implementation. 
+In this section, we modify some python script files in the original implementation. Note that in the report, we have a section for experiments on non-linearity. But in this repository we omit the section for non-linearity because the codes in this section contain the implementation for non-linearity.
+
+We try to use two pre-trained word embeddings named GloVe and word2vec. We have extracted the embeddings of words in the vocaublary of XSum dataset and save them into .npy files. You can download them [here](https://drive.google.com/uc?id=1Pc309-Zq7cn-09lIvMt2VVMlH7BerfXh) for Glove and [here](https://drive.google.com/uc?id=1Lqr5j7D6eURerK-WPawoEl18qCE_UwtG) for word2vec. You should put these two files in directory /XSum in the original implementation.
+
+Then, you should make several changes to the original implementation (i.e. use script files in directory "word-embeddings" in this repository to replace files in the original implementation):
+
+* use "train.py" and "generate.py" to replace the corresponding ones in directory "XSum/XSum-Topic-ConvS2S/"
+* use "data.py" and "trainer.py" to replace the corresponding ones in directory "XSum/XSum-Topic-ConvS2S/fairseq/"
+* use "fconv.py" to replace the corresponding one in directory "XSum-Topic-ConvS2S/fairseq/models/"
+* put "vectordict.py" in directory "XSum/XSum-Topic-ConvS2S/fairseq/"
+
+The remaining steps are the same as the steps in the original implementation.
